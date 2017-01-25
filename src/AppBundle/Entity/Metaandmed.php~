@@ -1,0 +1,129 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Metaandmed
+{
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $valjaandja;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $dokumentLiik;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $tekstiliik;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $lyhend;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $dokumentEtapp;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $dokumentStaatus;
+	
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $aktikuupaev;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $rtOsa;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $rtAasta;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $rtNr;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $rtArtikkel;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $aktViide;
+	
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $joustumine;
+	
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $kehtivuseAlgus;
+	
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $kehtivuseLopp;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $skeemiNimi;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $globaalId;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $metaandmedVersioon;
+	
+	/**
+	 * @ORM\Column(type="date")
+	 */
+	private $metaandmedVersioonKuupaev;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $metaandmedVersioonPohjustaja;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $terviktekstGrupiId;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="Akt")
+     * @ORM\JoinColumn(name="akt_id", referencedColumnName="id")
+	 */
+	private $akt;
+}

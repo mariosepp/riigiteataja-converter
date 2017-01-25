@@ -1,0 +1,44 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Osa
+{
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $tunnus;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $osaNr;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $kuvatavNr;
+	
+	/**
+	 * @ORM\Column(type="text")
+	 */
+	private $osaPealkiri;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="Akt")
+     * @ORM\JoinColumn(name="akt_id", referencedColumnName="id")
+	 */
+	private $akt;
+}

@@ -1,0 +1,44 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Loige
+{
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $tunnus;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $loigeNr;
+	
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	private $kuvatavNr;
+	
+	/**
+	 * @ORM\Column(type="text")
+	 */
+	private $sisuTekst;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="Paragrahv")
+     * @ORM\JoinColumn(name="paragrahv_id", referencedColumnName="id")
+	 */
+	private $paragrahv;
+}
